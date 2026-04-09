@@ -126,23 +126,20 @@ html { scroll-behavior: smooth; }
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full font-body" style="background-color: #FFF8F0;">
-  <div class="app-root" id="app-root">
-   <!-- Navigation -->
+  <div class="app-root" id="app-root"><!-- Navigation -->
    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-     <a href="#hero" class="flex items-center gap-2"> <span class="text-3xl">🌈</span> <span id="nav-title" class="font-heading font-bold text-xl" style="color: #6C63FF;">Aria's Learning Hub</span> </a> <!-- Desktop nav -->
-     <div class="hidden md:flex items-center gap-6">
-      <a href="#about" class="nav-link font-semibold text-sm" style="color: #444;">About</a> <a href="#expertise" class="nav-link font-semibold text-sm" style="color: #444;">Expertise</a> <a href="#resources" class="nav-link font-semibold text-sm" style="color: #444;">Free Resources</a> <a href="#services" class="nav-link font-semibold text-sm" style="color: #444;">Services</a> <a href="#pricing" class="nav-link font-semibold text-sm" style="color: #444;">Pricing</a> <a href="#contact" class="font-bold text-sm px-5 py-2 rounded-full text-white" style="background: linear-gradient(135deg, #FF6B9D, #C44FE2);">Contact Me</a>
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"><a href="#hero" class="flex items-center gap-2"> <span class="text-3xl">🌈</span> <span id="nav-title" class="font-heading font-bold text-xl" style="color: #6C63FF;">Aria's Learning Hub</span> </a> <!-- Philippines Clock -->
+     <div class="hidden md:flex items-center gap-3 text-sm font-semibold" style="color: #666;"><i data-lucide="clock" style="width: 18px; height: 18px;"></i> <span id="ph-clock">00:00 AM</span> <span style="color: #999;">🇵🇭</span>
+     </div><!-- Desktop nav -->
+     <div class="hidden md:flex items-center gap-6"><a href="#about" class="nav-link font-semibold text-sm" style="color: #444;">About</a> <a href="#expertise" class="nav-link font-semibold text-sm" style="color: #444;">Expertise</a> <a href="#resources" class="nav-link font-semibold text-sm" style="color: #444;">Free Resources</a> <a href="#services" class="nav-link font-semibold text-sm" style="color: #444;">Services</a> <a href="#pricing" class="nav-link font-semibold text-sm" style="color: #444;">Pricing</a> <a href="#contact" class="font-bold text-sm px-5 py-2 rounded-full text-white" style="background: linear-gradient(135deg, #FF6B9D, #C44FE2);">Contact Me</a>
      </div><!-- Mobile hamburger --> <button id="mobile-toggle" class="md:hidden p-2" aria-label="Toggle menu"> <i data-lucide="menu" style="color: #6C63FF;"></i> </button>
     </div><!-- Mobile menu -->
     <div id="mobile-menu" class="mobile-menu md:hidden overflow-hidden max-h-0 opacity-0 bg-white border-t">
-     <div class="px-4 py-3 flex flex-col gap-3">
-      <a href="#about" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">About</a> <a href="#expertise" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Expertise</a> <a href="#resources" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Free Resources</a> <a href="#services" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Services</a> <a href="#pricing" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Pricing</a> <a href="#contact" class="font-bold py-2" style="color: #C44FE2;" onclick="closeMobile()">Contact Me</a>
+     <div class="px-4 py-3 flex flex-col gap-3"><a href="#about" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">About</a> <a href="#expertise" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Expertise</a> <a href="#resources" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Free Resources</a> <a href="#services" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Services</a> <a href="#pricing" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Pricing</a> <a href="#contact" class="font-bold py-2" style="color: #C44FE2;" onclick="closeMobile()">Contact Me</a>
      </div>
     </div>
    </nav><!-- Hero Section -->
-   <section id="hero" class="hero-gradient relative overflow-hidden pt-24 pb-20 px-4 md:pt-32 md:pb-28">
-    <!-- Floating decorations -->
+   <section id="hero" class="hero-gradient relative overflow-hidden pt-24 pb-20 px-4 md:pt-32 md:pb-28"><!-- Floating decorations -->
     <div class="absolute top-20 left-10 text-5xl float-1 opacity-80">
      ⭐
     </div>
@@ -162,36 +159,31 @@ html { scroll-behavior: smooth; }
      🎯
     </div>
     <div class="max-w-4xl mx-auto text-center relative z-10">
-     <div class="anim-scale inline-block mb-4 px-4 py-1 rounded-full bg-white/30 backdrop-blur-sm">
-      <span class="text-white font-semibold text-sm">✨ by MKDB ✨</span>
+     <div class="anim-scale inline-block mb-4 px-4 py-1 rounded-full bg-white/30 backdrop-blur-sm"><span class="text-white font-semibold text-sm">✨ by MKDB ✨</span>
      </div>
      <h1 id="hero-title" class="anim-up font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg">Aria's Learning Hub</h1>
      <p id="hero-name" class="anim-up anim-delay-1 text-xl md:text-2xl text-white/90 font-semibold mb-2">Maria Kristina Basa</p>
      <p id="hero-subtitle" class="anim-up anim-delay-2 text-lg md:text-xl text-white/80 font-medium mb-6">Educator &amp; Digital Creator</p>
      <p class="anim-up anim-delay-3 text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">Helping students and teachers learn smarter with interactive lessons and creative tools.</p>
-     <div class="anim-up anim-delay-4 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#services" id="hero-cta" class="inline-block px-8 py-3 rounded-full font-bold text-lg bg-white shadow-lg hover:shadow-xl transition-all hover:scale-105" style="color: #6C63FF;"> Start Learning Today 🚀 </a> <a href="#video-section" class="inline-block px-8 py-3 rounded-full font-bold text-lg border-2 border-white text-white hover:bg-white/20 transition-all"> Watch Video ▶ </a>
+     <div class="anim-up anim-delay-4 flex flex-col sm:flex-row gap-4 justify-center"><a href="#services" id="hero-cta" class="inline-block px-8 py-3 rounded-full font-bold text-lg bg-white shadow-lg hover:shadow-xl transition-all hover:scale-105" style="color: #6C63FF;"> Start Learning Today 🚀 </a> <a href="#video-section" class="inline-block px-8 py-3 rounded-full font-bold text-lg border-2 border-white text-white hover:bg-white/20 transition-all"> Watch Video ▶ </a>
      </div>
     </div>
    </section><!-- Welcome + Video Section -->
    <section id="video-section" class="py-16 px-4" style="background: linear-gradient(180deg, #FFF8F0 0%, #F0E6FF 100%);">
     <div class="max-w-6xl mx-auto">
-     <div class="reveal text-center mb-10">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8E5FF; color: #6C63FF;">👋 Welcome</span>
+     <div class="reveal text-center mb-10"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8E5FF; color: #6C63FF;">👋 Welcome</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #333;">Meet Teacher Aria / Ms. Tin</h2>
       <p class="max-w-2xl mx-auto text-base leading-relaxed" style="color: #666;">I'm a university instructor and online educator specializing in English and coding. I create engaging learning materials, interactive lessons, and resources to make education meaningful and fun.</p>
      </div><!-- Video -->
      <div class="reveal max-w-3xl mx-auto">
-      <div class="video-wrapper shadow-2xl" style="box-shadow: 0 20px 60px rgba(108, 99, 255, 0.25);">
-       <iframe src="https://www.youtube.com/embed/9Ex_lWE1NwI" title="Aria's Learning Hub Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <div class="video-wrapper shadow-2xl" style="box-shadow: 0 20px 60px rgba(108, 99, 255, 0.25);"><iframe src="https://www.youtube.com/embed/9Ex_lWE1NwI" title="Aria's Learning Hub Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
      </div>
     </div>
    </section><!-- About Section -->
    <section id="about" class="py-16 px-4" style="background: #FFFFFF;">
     <div class="max-w-6xl mx-auto">
-     <div class="reveal text-center mb-12">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFE8F0; color: #FF6B9D;">🌸 About Me</span>
+     <div class="reveal text-center mb-12"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFE8F0; color: #FF6B9D;">🌸 About Me</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold" style="color: #333;">Who I Am</h2>
      </div>
      <div class="grid md:grid-cols-2 gap-8">
@@ -214,8 +206,7 @@ html { scroll-behavior: smooth; }
    </section><!-- Expertise Section -->
    <section id="expertise" class="py-16 px-4" style="background: linear-gradient(135deg, #F5F0FF 0%, #FFF0F5 50%, #F0FFF4 100%);">
     <div class="max-w-6xl mx-auto">
-     <div class="reveal text-center mb-12">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E0F8F0; color: #00C9A7;">🏆 Expertise</span>
+     <div class="reveal text-center mb-12"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E0F8F0; color: #00C9A7;">🏆 Expertise</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold" style="color: #333;">What I Do Best</h2>
      </div>
      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -252,15 +243,13 @@ html { scroll-behavior: smooth; }
    </section><!-- Free Resources Section -->
    <section id="resources" class="py-16 px-4" style="background: #FFFFFF;">
     <div class="max-w-6xl mx-auto">
-     <div class="reveal text-center mb-4">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFF3E0; color: #FFB347;">🎁 Free Resources</span>
+     <div class="reveal text-center mb-4"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFF3E0; color: #FFB347;">🎁 Free Resources</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold mb-2" style="color: #333;">Free Learning Materials</h2>
       <p class="text-base" style="color: #888;">I believe education should be accessible to everyone!</p>
      </div>
      <div class="grid sm:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
       <div class="reveal service-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md">
-       <div class="flex items-start gap-3">
-        <span class="text-3xl">📝</span>
+       <div class="flex items-start gap-3"><span class="text-3xl">📝</span>
         <div>
          <h3 class="font-heading font-bold text-lg mb-1" style="color: #6C63FF;">English Grammar Essentials</h3>
          <p class="text-sm" style="color: #666;">Complete guide covering basic to advanced grammar rules with examples and exercises.</p>
@@ -268,8 +257,7 @@ html { scroll-behavior: smooth; }
        </div>
       </div>
       <div class="reveal service-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-md">
-       <div class="flex items-start gap-3">
-        <span class="text-3xl">💻</span>
+       <div class="flex items-start gap-3"><span class="text-3xl">💻</span>
         <div>
          <h3 class="font-heading font-bold text-lg mb-1" style="color: #00C9A7;">Coding for Beginners</h3>
          <p class="text-sm" style="color: #666;">Step-by-step introduction to programming concepts with fun, interactive examples.</p>
@@ -277,8 +265,7 @@ html { scroll-behavior: smooth; }
        </div>
       </div>
       <div class="reveal service-card bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 shadow-md">
-       <div class="flex items-start gap-3">
-        <span class="text-3xl">📊</span>
+       <div class="flex items-start gap-3"><span class="text-3xl">📊</span>
         <div>
          <h3 class="font-heading font-bold text-lg mb-1" style="color: #FFB347;">Project Management Basics</h3>
          <p class="text-sm" style="color: #666;">Essential principles and tools for students and professionals.</p>
@@ -286,8 +273,7 @@ html { scroll-behavior: smooth; }
        </div>
       </div>
       <div class="reveal service-card bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 shadow-md">
-       <div class="flex items-start gap-3">
-        <span class="text-3xl">🎯</span>
+       <div class="flex items-start gap-3"><span class="text-3xl">🎯</span>
         <div>
          <h3 class="font-heading font-bold text-lg mb-1" style="color: #FF6B9D;">Study Tips &amp; Techniques</h3>
          <p class="text-sm" style="color: #666;">Proven methods to improve learning efficiency and academic performance.</p>
@@ -302,8 +288,7 @@ html { scroll-behavior: smooth; }
    </section><!-- Services Section -->
    <section id="services" class="py-16 px-4" style="background: linear-gradient(180deg, #F5F0FF 0%, #FFF8F0 100%);">
     <div class="max-w-6xl mx-auto">
-     <div class="reveal text-center mb-12">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8E5FF; color: #6C63FF;">💼 Services</span>
+     <div class="reveal text-center mb-12"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8E5FF; color: #6C63FF;">💼 Services</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold" style="color: #333;">My Services</h2>
      </div>
      <div class="grid md:grid-cols-3 gap-8">
@@ -333,13 +318,11 @@ html { scroll-behavior: smooth; }
    </section><!-- Pricing Section -->
    <section id="pricing" class="py-16 px-4" style="background: #FFFFFF;">
     <div class="max-w-6xl mx-auto">
-     <div class="reveal text-center mb-6">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFF3CD; color: #D4A017;">💰 Plans &amp; Pricing</span>
+     <div class="reveal text-center mb-6"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFF3CD; color: #D4A017;">💰 Plans &amp; Pricing</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #333;">Choose Your Package</h2>
      </div><!-- Currency Toggle -->
      <div class="reveal flex justify-center mb-10">
-      <div class="inline-flex bg-gray-100 rounded-full p-1">
-       <button id="tab-intl" class="tab-btn active px-6 py-2 rounded-full font-bold text-sm" onclick="switchPricing('intl')">🌍 International (USD)</button> <button id="tab-ph" class="tab-btn px-6 py-2 rounded-full font-bold text-sm" style="color: #666;" onclick="switchPricing('ph')">🇵🇭 Philippines (PHP)</button>
+      <div class="inline-flex bg-gray-100 rounded-full p-1"><button id="tab-intl" class="tab-btn active px-6 py-2 rounded-full font-bold text-sm" onclick="switchPricing('intl')">🌍 International (USD)</button> <button id="tab-ph" class="tab-btn px-6 py-2 rounded-full font-bold text-sm" style="color: #666;" onclick="switchPricing('ph')">🇵🇭 Philippines (PHP)</button>
       </div>
      </div><!-- International Pricing -->
      <div id="pricing-intl" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
@@ -499,8 +482,7 @@ html { scroll-behavior: smooth; }
    </section><!-- Test Prep Packages Section -->
    <section id="test-prep" class="py-16 px-4" style="background: linear-gradient(135deg, #F0E6FF 0%, #FFF0F5 100%);">
     <div class="max-w-6xl mx-auto">
-     <div class="reveal text-center mb-6">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8D5FF; color: #6C63FF;">📚 Test Prep</span>
+     <div class="reveal text-center mb-6"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8D5FF; color: #6C63FF;">📚 Test Prep</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold mb-2" style="color: #333;">Exam Success Programs</h2>
       <p id="test-prep-intro" class="text-lg font-semibold mb-4" style="color: #6C63FF;">EIKEN • TOEIC • IELTS Coaching</p>
       <p style="color: #888;">Structured training to help you reach your target score with proven strategies and personalized support.</p>
@@ -573,37 +555,43 @@ html { scroll-behavior: smooth; }
      <div class="reveal bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 shadow-md max-w-4xl mx-auto">
       <h3 class="font-heading font-bold text-lg text-center mb-6" style="color: #6C63FF;">✨ Premium Test Prep Inclusions</h3>
       <div class="grid md:grid-cols-2 gap-4 text-sm" style="color: #555;">
-       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+       <div class="flex items-start gap-3">
+        <span class="text-lg">✓</span>
         <div>
          <p class="font-semibold" style="color: #6C63FF;">Mock Exams</p>
          <p class="text-xs" style="color: #888;">IELTS / TOEIC / EIKEN style practice tests</p>
         </div>
        </div>
-       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+       <div class="flex items-start gap-3">
+        <span class="text-lg">✓</span>
         <div>
          <p class="font-semibold" style="color: #FF6B9D;">Speaking Practice</p>
          <p class="text-xs" style="color: #888;">Live conversation with expert corrections</p>
         </div>
        </div>
-       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+       <div class="flex items-start gap-3">
+        <span class="text-lg">✓</span>
         <div>
          <p class="font-semibold" style="color: #00C9A7;">Writing Feedback</p>
          <p class="text-xs" style="color: #888;">Detailed band score style assessments</p>
         </div>
        </div>
-       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+       <div class="flex items-start gap-3">
+        <span class="text-lg">✓</span>
         <div>
          <p class="font-semibold" style="color: #D4A017;">Exam Vocabulary</p>
          <p class="text-xs" style="color: #888;">Targeted word lists for your test</p>
         </div>
        </div>
-       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+       <div class="flex items-start gap-3">
+        <span class="text-lg">✓</span>
         <div>
          <p class="font-semibold" style="color: #6C63FF;">Test Strategies</p>
          <p class="text-xs" style="color: #888;">Time management &amp; proven techniques</p>
         </div>
        </div>
-       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+       <div class="flex items-start gap-3">
+        <span class="text-lg">✓</span>
         <div>
          <p class="font-semibold" style="color: #FF6B9D;">Score Planning</p>
          <p class="text-xs" style="color: #888;">Personalized roadmap to your target score</p>
@@ -627,13 +615,11 @@ html { scroll-behavior: smooth; }
    </section><!-- Contact Section -->
    <section id="contact" class="py-16 px-4" style="background: #FFF8F0;">
     <div class="max-w-4xl mx-auto">
-     <div class="reveal text-center mb-10">
-      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFE8F0; color: #FF6B9D;">💌 Contact</span>
+     <div class="reveal text-center mb-10"><span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFE8F0; color: #FF6B9D;">💌 Contact</span>
       <h2 class="font-heading text-3xl md:text-4xl font-bold mb-2" style="color: #333;">Get In Touch</h2>
       <p style="color: #888;">I'd love to hear from you! Reach out anytime.</p>
      </div>
-     <div class="reveal grid md:grid-cols-3 gap-6 mb-8">
-      <a href="mailto:mrsmkdbasa@gmail.com" class="service-card bg-white rounded-2xl p-6 text-center shadow-md block">
+     <div class="reveal grid md:grid-cols-3 gap-6 mb-8"><a href="mailto:mrsmkdbasa@gmail.com" class="service-card bg-white rounded-2xl p-6 text-center shadow-md block">
        <div class="text-3xl mb-3">
         📧
        </div><h3 class="font-heading font-bold mb-1" style="color: #6C63FF;">Email</h3><p class="text-sm" style="color: #888;">mrsmkdbasa@gmail.com</p></a> <a href="https://www.facebook.com/blessedteacheraria" target="_blank" rel="noopener noreferrer" class="service-card bg-white rounded-2xl p-6 text-center shadow-md block">
@@ -660,29 +646,11 @@ html { scroll-behavior: smooth; }
        <h3 class="font-heading font-bold mb-1" style="color: #00C9A7;">Location</h3>
        <p class="text-sm" style="color: #888;">Philippines 🇵🇭</p>
       </div>
-     </div><!-- Quick message form (mailto) -->
-     <div class="reveal bg-white rounded-3xl p-8 shadow-lg max-w-xl mx-auto">
-      <h3 class="font-heading font-bold text-xl text-center mb-6" style="color: #333;">Send Me a Message</h3>
-      <form id="contact-form" class="flex flex-col gap-4">
-       <div>
-        <label for="c-name" class="block text-sm font-semibold mb-1" style="color: #555;">Your Name</label> <input id="c-name" type="text" placeholder="Enter your name" class="w-full px-4 py-3 rounded-xl border-2 text-sm focus:outline-none focus:border-purple-400 transition" style="border-color: #E0E0E0;">
-       </div>
-       <div>
-        <label for="c-email" class="block text-sm font-semibold mb-1" style="color: #555;">Your Email</label> <input id="c-email" type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-xl border-2 text-sm focus:outline-none focus:border-purple-400 transition" style="border-color: #E0E0E0;">
-       </div>
-       <div>
-        <label for="c-msg" class="block text-sm font-semibold mb-1" style="color: #555;">Message</label> <textarea id="c-msg" rows="4" placeholder="How can I help you?" class="w-full px-4 py-3 rounded-xl border-2 text-sm focus:outline-none focus:border-purple-400 transition resize-none" style="border-color: #E0E0E0;"></textarea>
-       </div><button type="submit" class="w-full py-3 rounded-full font-bold text-white text-lg shadow-md hover:shadow-lg transition-all hover:scale-[1.02]" style="background: linear-gradient(135deg, #FF6B9D, #C44FE2);"> Send Message 💌 </button>
-       <div id="form-success" class="hidden text-center py-3 rounded-xl font-semibold text-sm" style="background: #E0F8F0; color: #00C9A7;">
-        ✅ Opening your email app now!
-       </div>
-      </form>
      </div>
     </div>
    </section><!-- Footer -->
    <footer class="py-8 px-4 text-center" style="background: #333; color: #aaa;">
-    <div class="max-w-4xl mx-auto">
-     <span class="text-2xl">🌈</span>
+    <div class="max-w-4xl mx-auto"><span class="text-2xl">🌈</span>
      <p class="font-heading font-bold text-lg text-white mt-2">Aria's Learning Hub</p>
      <p class="text-sm mt-1">by Maria Kristina Basa (MKDB)</p>
      <p class="text-xs mt-4" style="color: #666;">Teaching since 2014.</p>
@@ -735,19 +703,18 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Contact form -> mailto
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('c-name').value.trim();
-  const email = document.getElementById('c-email').value.trim();
-  const msg = document.getElementById('c-msg').value.trim();
-  const subject = encodeURIComponent('Inquiry from ' + (name || 'Website Visitor'));
-  const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
-  window.open('mailto:mrsmkdbasa@gmail.com?subject=' + subject + '&body=' + body, '_blank');
-  document.getElementById('form-success').classList.remove('hidden');
-  this.reset();
-  setTimeout(() => document.getElementById('form-success').classList.add('hidden'), 4000);
-});
+// Update Philippines clock
+function updatePHClock() {
+  const now = new Date();
+  const phTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+  const hours = phTime.getHours();
+  const minutes = phTime.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const displayHours = hours % 12 || 12;
+  document.getElementById('ph-clock').textContent = displayHours + ':' + minutes + ' ' + ampm;
+}
+updatePHClock();
+setInterval(updatePHClock, 1000);
 
 // Lucide icons
 lucide.createIcons();
@@ -830,5 +797,5 @@ window.elementSdk.init({
   }
 });
 </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e966c2f95a3fed9',t:'MTc3NTcwNTMxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e96e1e6a12ffed9',t:'MTc3NTcxMDEzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
