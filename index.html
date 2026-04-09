@@ -1,542 +1,834 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Kristina Basa - Educator & Digital Creator</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .clock-container {
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            border-radius: 15px;
-            padding: 20px;
-            color: white;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57);
-            border-radius: 2px;
-        }
-        
-        .service-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-        
-        .expertise-item {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="gradient-bg text-white py-6 sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-6">
-            <nav class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold">Teacher Aria</h1>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="hover:text-yellow-300 transition-colors">Home</a>
-                    <a href="#about" class="hover:text-yellow-300 transition-colors">About</a>
-                    <a href="#materials" class="hover:text-yellow-300 transition-colors">Free Materials</a>
-                    <a href="#services" class="hover:text-yellow-300 transition-colors">Services</a>
-                    <a href="#portfolio" class="hover:text-yellow-300 transition-colors">Plans & Prices</a>
-                    <a href="#contact" class="hover:text-yellow-300 transition-colors">Contact</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aria's Learning Hub by MKDB</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;family=Nunito:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        heading: ['Baloo 2', 'cursive'],
+        body: ['Nunito', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+  <style>
+html, body { height: 100%; margin: 0; }
+* { box-sizing: border-box; }
+.app-root { height: 100%; overflow-y: auto; overflow-x: hidden; }
 
-    <!-- Hero Section -->
-    <section id="home" class="gradient-bg text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-5xl font-bold mb-4">Maria Kristina Basa</h1>
-                    <h2 class="text-2xl font-light mb-6">Educator & Digital Creator</h2>
-                    <p class="text-xl mb-8 leading-relaxed">Helping students and teachers learn smarter with interactive lessons and creative tools.</p>
-                    
-                    <div class="mb-8">
-                        <p class="text-lg mb-6">Welcome! I'm Aria/Kristina, a university instructor and online educator specializing in English and coding. I create engaging learning materials, interactive lessons, and resources to make education meaningful and fun.</p>
-                        <div class="bg-white bg-opacity-20 p-4 rounded-lg mb-6">
-                            <p class="text-sm font-semibold mb-2">✅ Registered Professional Educator</p>
-                            <p class="text-sm opacity-90">Official receipts provided for all services</p>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="bg-yellow-400 text-purple-800 px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-300 transition-colors shadow-lg inline-block">
-                        Start Learning with Me →
-                    </a>
-                </div>
-                
-                <div>
-                    <div class="clock-container mb-8">
-                        <h3 class="text-xl font-semibold mb-2">🇵🇭 Philippine Time</h3>
-                        <div id="clock" class="text-3xl font-bold mb-2"></div>
-                        <div id="date" class="text-sm opacity-90"></div>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-4 text-purple-700 text-center">Get to Know Aria</h3>
-                        <div class="aspect-video mb-4">
-                            <iframe 
-                                width="100%" 
-                                height="100%" 
-                                src="https://www.youtube.com/embed/9Ex_lWE1NwI" 
-                                title="Teacher Aria's Educational Video" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen
-                                class="rounded-lg">
-                            </iframe>
-                        </div>
-                        <p class="text-gray-600 text-center">YouTube: @BlessedTeacherAria</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Fun animated gradient background */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 section-title">About Me</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-700">Who I Am</h3>
-                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                        I am a dedicated educator based in the Philippines, with experience teaching university students and creating customized online lessons for learners worldwide.
-                    </p>
-                    
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-700">My Mission</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        To make education interactive, inspiring, and accessible for everyone through innovative teaching methods and engaging digital content.
-                    </p>
-                </div>
-                
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-700">My Expertise</h3>
-                    <div class="space-y-4">
-                        <div class="expertise-item">
-                            <h4 class="font-semibold">🎓 University Instructor</h4>
-                            <p class="text-sm">Project Management & Data Science</p>
-                        </div>
-                        <div class="expertise-item">
-                            <h4 class="font-semibold">🌍 Online English Teaching</h4>
-                            <p class="text-sm">Beginner to Advanced Levels</p>
-                        </div>
-                        <div class="expertise-item">
-                            <h4 class="font-semibold">💻 Coding for Kids</h4>
-                            <p class="text-sm">Making programming fun and accessible</p>
-                        </div>
-                        <div class="expertise-item">
-                            <h4 class="font-semibold">🌐 Interactive Educational Webpages</h4>
-                            <p class="text-sm">Custom learning experiences</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.hero-gradient {
+  background: linear-gradient(135deg, #FF6B9D 0%, #C44FE2 25%, #6C63FF 50%, #00C9A7 75%, #FFD93D 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
 
-    <!-- Free Materials Section -->
-    <section id="materials" class="py-20 bg-gradient-to-br from-green-50 to-blue-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 section-title">Free Learning Materials</h2>
-            
-            <div class="text-center mb-12">
-                <p class="text-xl text-gray-700 mb-6">🎁 I believe education should be accessible to everyone! Here are some free resources to get you started:</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-700">📚 Study Notes & Resources</h3>
-                    <div class="space-y-4">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h4 class="font-semibold text-lg mb-2">📝 English Grammar Essentials</h4>
-                            <p class="text-gray-600">Complete guide covering basic to advanced grammar rules with examples and exercises.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h4 class="font-semibold text-lg mb-2">💻 Coding for Beginners</h4>
-                            <p class="text-gray-600">Step-by-step introduction to programming concepts with fun, interactive examples.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h4 class="font-semibold text-lg mb-2">📊 Project Management Basics</h4>
-                            <p class="text-gray-600">Essential project management principles and tools for students and professionals.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h4 class="font-semibold text-lg mb-2">🎯 Study Tips & Techniques</h4>
-                            <p class="text-gray-600">Proven methods to improve learning efficiency and academic performance.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-700">📚 Additional Resources</h3>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-semibold text-lg mb-4 text-center">More Learning Materials Coming Soon!</h4>
-                        <p class="text-gray-600 text-center">I'm constantly creating new resources to help you learn better. Check back regularly for updates!</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <p class="text-lg text-gray-700 mb-6">Want access to all these free materials? Just send me an email!</p>
-                <a href="mailto:mrsmkdbasa@gmail.com?subject=Request for Free Learning Materials&body=Hi Teacher Aria! I would like to access your free learning materials. Thank you!" 
-                   class="bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-colors shadow-lg inline-block">
-                    📧 Get Free Materials Now!
-                </a>
-            </div>
-        </div>
-    </section>
+/* Floating shapes */
+@keyframes float1 { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } }
+@keyframes float2 { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(-8deg); } }
+@keyframes float3 { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-25px) scale(1.1); } }
+.float-1 { animation: float1 4s ease-in-out infinite; }
+.float-2 { animation: float2 5s ease-in-out infinite 0.5s; }
+.float-3 { animation: float3 6s ease-in-out infinite 1s; }
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 section-title">My Services</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card p-8 rounded-xl card-hover">
-                    <div class="text-4xl mb-4">🗣️</div>
-                    <h3 class="text-xl font-semibold mb-4">Online English Lessons</h3>
-                    <p class="leading-relaxed">Comprehensive English instruction from beginner to advanced levels for students of all ages.</p>
-                </div>
-                
-                <div class="service-card p-8 rounded-xl card-hover">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h3 class="text-xl font-semibold mb-4">Online Coding for Kids and Teens</h3>
-                    <p class="leading-relaxed">Fun and interactive programming lessons designed to introduce young learners to coding concepts through games, projects, and creative activities that build problem-solving skills.</p>
-                </div>
-                
-                <div class="service-card p-8 rounded-xl card-hover">
-                    <div class="text-4xl mb-4">🎨</div>
-                    <h3 class="text-xl font-semibold mb-4">Digital Designing</h3>
-                    <p class="leading-relaxed">Professional design services for banners, ebooks, interactive webpages, educational materials, and custom digital content to enhance your brand or learning experience.</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <p class="text-xl text-gray-700 mb-6">Ready to start your learning journey?</p>
-                <a href="mailto:mrsmkdbasa@gmail.com?subject=Request for rates and packages&body=Hi Teacher Aria! I would like to know more about your rates and packages for your services. Please send me the details. Thank you!" 
-                   class="bg-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg inline-block">
-                    Contact me
-                </a>
-            </div>
-        </div>
-    </section>
+/* Entrance animations */
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+@keyframes slideLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+.anim-up { animation: slideUp 0.7s ease forwards; }
+.anim-scale { animation: scaleIn 0.6s ease forwards; }
+.anim-left { animation: slideLeft 0.7s ease forwards; }
+.anim-right { animation: slideRight 0.7s ease forwards; }
+.anim-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.anim-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.anim-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.anim-delay-4 { animation-delay: 0.4s; opacity: 0; }
+.anim-delay-5 { animation-delay: 0.5s; opacity: 0; }
 
-    <!-- Plans and Prices Section -->
-    <section id="portfolio" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 section-title">Plans & Prices</h2>
-            
-            <div class="text-center mb-12">
-                <p class="text-xl text-gray-700 mb-4">Choose the perfect learning package for your needs!</p>
-                <p class="text-lg text-gray-600">💡 All sessions include personalized feedback and learning materials</p>
-            </div>
-            
-            <!-- 25 Minute Sessions -->
-            <div class="mb-16">
-                <h3 class="text-3xl font-bold text-center mb-8 text-purple-700">⚡ Quick Sessions (25 minutes)</h3>
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl border-2 border-yellow-200 opacity-60">
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">📚</div>
-                            <h4 class="text-lg font-semibold mb-2 text-gray-500">10 Sessions</h4>
-                            <p class="text-sm text-gray-500 mb-4">DISCONTINUED</p>
-                            <div class="text-gray-400 line-through">Old Package</div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-200 card-hover">
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🌟</div>
-                            <h4 class="text-lg font-semibold mb-2 text-green-700">8 Sessions</h4>
-                            <div class="text-3xl font-bold text-green-600 mb-2">$24.99</div>
-                            <p class="text-sm text-gray-600 mb-4">Perfect for beginners</p>
-                            <div class="text-xs text-green-600 font-semibold">POPULAR</div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 card-hover">
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">💎</div>
-                            <h4 class="text-lg font-semibold mb-2 text-blue-700">12 Sessions</h4>
-                            <div class="text-3xl font-bold text-blue-600 mb-2">$34.99</div>
-                            <p class="text-sm text-gray-600 mb-4">Great value package</p>
-                            <div class="text-xs text-blue-600 font-semibold">BEST VALUE</div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border-2 border-purple-200 card-hover">
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🚀</div>
-                            <h4 class="text-lg font-semibold mb-2 text-purple-700">20 Sessions</h4>
-                            <div class="text-3xl font-bold text-purple-600 mb-2">$54.99</div>
-                            <p class="text-sm text-gray-600 mb-4">Intensive learning</p>
-                            <div class="text-xs text-purple-600 font-semibold">INTENSIVE</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 50 Minute Sessions -->
-            <div class="mb-12">
-                <h3 class="text-3xl font-bold text-center mb-8 text-indigo-700">🎯 Extended Sessions (50 minutes)</h3>
-                <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border-2 border-gray-200 opacity-60">
-                        <div class="text-center">
-                            <div class="text-xl mb-2">📖</div>
-                            <h4 class="text-sm font-semibold mb-2 text-gray-500">5 Sessions</h4>
-                            <p class="text-xs text-gray-500 mb-2">DISCONTINUED</p>
-                            <div class="text-gray-400 line-through text-sm">Old</div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border-2 border-gray-200 opacity-60">
-                        <div class="text-center">
-                            <div class="text-xl mb-2">📚</div>
-                            <h4 class="text-sm font-semibold mb-2 text-gray-500">10 Sessions</h4>
-                            <p class="text-xs text-gray-500 mb-2">DISCONTINUED</p>
-                            <div class="text-gray-400 line-through text-sm">Old</div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl border-2 border-orange-200 card-hover">
-                        <div class="text-center">
-                            <div class="text-xl mb-2">🌟</div>
-                            <h4 class="text-sm font-semibold mb-2 text-orange-700">4 Sessions</h4>
-                            <div class="text-2xl font-bold text-orange-600 mb-2">$24.99</div>
-                            <p class="text-xs text-gray-600">Starter pack</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-teal-50 to-green-50 p-6 rounded-xl border-2 border-teal-200 card-hover">
-                        <div class="text-center">
-                            <div class="text-xl mb-2">💎</div>
-                            <h4 class="text-sm font-semibold mb-2 text-teal-700">8 Sessions</h4>
-                            <div class="text-2xl font-bold text-teal-600 mb-2">$39.99</div>
-                            <p class="text-xs text-gray-600">Popular choice</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-xl border-2 border-indigo-200 card-hover">
-                        <div class="text-center">
-                            <div class="text-xl mb-2">🚀</div>
-                            <h4 class="text-sm font-semibold mb-2 text-indigo-700">12 Sessions</h4>
-                            <div class="text-2xl font-bold text-indigo-600 mb-2">$57.99</div>
-                            <p class="text-xs text-gray-600">Great value</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-6 rounded-xl border-2 border-pink-200 card-hover">
-                        <div class="text-center">
-                            <div class="text-xl mb-2">⭐</div>
-                            <h4 class="text-sm font-semibold mb-2 text-pink-700">20 Sessions</h4>
-                            <div class="text-2xl font-bold text-pink-600 mb-2">$88.88</div>
-                            <p class="text-xs text-gray-600">Lucky price!</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Premium Package -->
-                <div class="mt-8 flex justify-center">
-                    <div class="bg-gradient-to-br from-yellow-100 to-amber-100 p-8 rounded-xl border-4 border-yellow-300 card-hover max-w-sm">
-                        <div class="text-center">
-                            <div class="text-4xl mb-4">👑</div>
-                            <h4 class="text-2xl font-bold mb-2 text-amber-700">30 Sessions</h4>
-                            <div class="text-4xl font-bold text-amber-600 mb-4">$125.99</div>
-                            <p class="text-sm text-gray-700 mb-4">Ultimate learning experience</p>
-                            <div class="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full text-sm font-bold">
-                                PREMIUM PACKAGE
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12 bg-gradient-to-r from-purple-100 to-pink-100 p-8 rounded-xl">
-                <h3 class="text-2xl font-bold mb-4 text-purple-700">Ready to Choose Your Plan?</h3>
-                <p class="text-lg text-gray-700 mb-6">All packages include personalized lessons, progress tracking, and learning materials!</p>
-                <a href="mailto:mrsmkdbasa@gmail.com?subject=I want to book sessions&body=Hi Teacher Aria! I'm interested in booking sessions. Please let me know which package would be best for me and how to get started. Thank you!" 
-                   class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg inline-block">
-                    📧 Book Your Sessions Now!
-                </a>
-            </div>
-        </div>
-    </section>
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 gradient-bg text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Get in Touch!</h2>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-8">Let's Connect</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-white bg-opacity-20 p-3 rounded-full">
-                                    <span class="text-xl">📧</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Email</p>
-                                    <p class="opacity-90">mrsmkdbasa@gmail.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-white bg-opacity-20 p-3 rounded-full">
-                                    <span class="text-xl">📱</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Facebook</p>
-                                    <a href="https://www.facebook.com/blessedteacheraria/" class="opacity-90 hover:opacity-100 underline">@blessedteacheraria</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-white bg-opacity-20 p-3 rounded-full">
-                                    <span class="text-xl">💬</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Line ID</p>
-                                    <p class="opacity-90">mrsmkdbasa</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-white bg-opacity-20 p-3 rounded-full">
-                                    <span class="text-xl">💻</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">GitHub</p>
-                                    <p class="opacity-90">ariasensei</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-white bg-opacity-20 p-3 rounded-full">
-                                    <span class="text-xl">📍</span>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Location</p>
-                                    <p class="opacity-90">Philippines 🇵🇭</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white bg-opacity-10 p-8 rounded-xl">
-                        <h3 class="text-xl font-semibold mb-6">Ready to Start Learning?</h3>
-                        <p class="mb-6 opacity-90">Whether you're looking for English lessons, coding instruction, or custom educational content, I'm here to help you achieve your learning goals!</p>
-                        <a href="mailto:mrsmkdbasa@gmail.com?subject=Ready to Start Learning&body=Hi Teacher Aria! I'm ready to start learning with you. Whether I'm looking for English lessons, coding instruction, or custom educational content, I'd love to know how we can get started. Thank you!" 
-                           class="bg-yellow-400 text-purple-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors w-full inline-block text-center">
-                            Send Message
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Card hover */
+.service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(108, 99, 255, 0.2); }
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p class="opacity-80">© 2024 Maria Kristina Basa - Teacher Aria. Teaching since 2014! 🌟</p>
-        </div>
-    </footer>
+/* Pricing card */
+.price-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.price-card:hover { transform: translateY(-6px) scale(1.02); }
+.price-card.popular { border: 3px solid #FFD93D; }
 
-    <script>
-        // Philippine Time Clock
-        function updateClock() {
-            const now = new Date();
-            
-            // Convert to Philippine Time (UTC+8)
-            const philippineTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Manila"}));
-            
-            const timeString = philippineTime.toLocaleTimeString('en-US', {
-                hour12: true,
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
-            
-            const dateString = philippineTime.toLocaleDateString('en-US', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            document.getElementById('clock').textContent = timeString;
-            document.getElementById('date').textContent = dateString;
-        }
-        
-        // Update clock every second
-        updateClock();
-        setInterval(updateClock, 1000);
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(102, 126, 234, 0.95)';
-            } else {
-                header.style.backgroundColor = '';
-            }
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97355daf64a2fec9',t:'MTc1NTg5NzEyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+/* Wavy section divider */
+.wave-divider { position: relative; }
+.wave-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 85% 80%, 70% 40%, 55% 90%, 40% 50%, 25% 85%, 10% 40%, 0 70%);
+}
+
+/* Tab styles */
+.tab-btn { transition: all 0.3s ease; }
+.tab-btn.active { background: linear-gradient(135deg, #6C63FF, #C44FE2); color: white; transform: scale(1.05); }
+
+/* Bubble decorations */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+/* Nav */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #6C63FF;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Mobile nav */
+.mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
+
+/* Video container */
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 16px; }
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body" style="background-color: #FFF8F0;">
+  <div class="app-root" id="app-root">
+   <!-- Navigation -->
+   <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+     <a href="#hero" class="flex items-center gap-2"> <span class="text-3xl">🌈</span> <span id="nav-title" class="font-heading font-bold text-xl" style="color: #6C63FF;">Aria's Learning Hub</span> </a> <!-- Desktop nav -->
+     <div class="hidden md:flex items-center gap-6">
+      <a href="#about" class="nav-link font-semibold text-sm" style="color: #444;">About</a> <a href="#expertise" class="nav-link font-semibold text-sm" style="color: #444;">Expertise</a> <a href="#resources" class="nav-link font-semibold text-sm" style="color: #444;">Free Resources</a> <a href="#services" class="nav-link font-semibold text-sm" style="color: #444;">Services</a> <a href="#pricing" class="nav-link font-semibold text-sm" style="color: #444;">Pricing</a> <a href="#contact" class="font-bold text-sm px-5 py-2 rounded-full text-white" style="background: linear-gradient(135deg, #FF6B9D, #C44FE2);">Contact Me</a>
+     </div><!-- Mobile hamburger --> <button id="mobile-toggle" class="md:hidden p-2" aria-label="Toggle menu"> <i data-lucide="menu" style="color: #6C63FF;"></i> </button>
+    </div><!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden overflow-hidden max-h-0 opacity-0 bg-white border-t">
+     <div class="px-4 py-3 flex flex-col gap-3">
+      <a href="#about" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">About</a> <a href="#expertise" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Expertise</a> <a href="#resources" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Free Resources</a> <a href="#services" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Services</a> <a href="#pricing" class="font-semibold py-2" style="color: #444;" onclick="closeMobile()">Pricing</a> <a href="#contact" class="font-bold py-2" style="color: #C44FE2;" onclick="closeMobile()">Contact Me</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="hero" class="hero-gradient relative overflow-hidden pt-24 pb-20 px-4 md:pt-32 md:pb-28">
+    <!-- Floating decorations -->
+    <div class="absolute top-20 left-10 text-5xl float-1 opacity-80">
+     ⭐
+    </div>
+    <div class="absolute top-32 right-16 text-4xl float-2 opacity-80">
+     📚
+    </div>
+    <div class="absolute bottom-20 left-20 text-4xl float-3 opacity-80">
+     🎨
+    </div>
+    <div class="absolute bottom-32 right-10 text-5xl float-1 opacity-80">
+     💻
+    </div>
+    <div class="absolute top-48 left-1/3 text-3xl float-2 opacity-60">
+     🌟
+    </div>
+    <div class="absolute bottom-16 right-1/3 text-3xl float-3 opacity-60">
+     🎯
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+     <div class="anim-scale inline-block mb-4 px-4 py-1 rounded-full bg-white/30 backdrop-blur-sm">
+      <span class="text-white font-semibold text-sm">✨ by MKDB ✨</span>
+     </div>
+     <h1 id="hero-title" class="anim-up font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg">Aria's Learning Hub</h1>
+     <p id="hero-name" class="anim-up anim-delay-1 text-xl md:text-2xl text-white/90 font-semibold mb-2">Maria Kristina Basa</p>
+     <p id="hero-subtitle" class="anim-up anim-delay-2 text-lg md:text-xl text-white/80 font-medium mb-6">Educator &amp; Digital Creator</p>
+     <p class="anim-up anim-delay-3 text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">Helping students and teachers learn smarter with interactive lessons and creative tools.</p>
+     <div class="anim-up anim-delay-4 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#services" id="hero-cta" class="inline-block px-8 py-3 rounded-full font-bold text-lg bg-white shadow-lg hover:shadow-xl transition-all hover:scale-105" style="color: #6C63FF;"> Start Learning Today 🚀 </a> <a href="#video-section" class="inline-block px-8 py-3 rounded-full font-bold text-lg border-2 border-white text-white hover:bg-white/20 transition-all"> Watch Video ▶ </a>
+     </div>
+    </div>
+   </section><!-- Welcome + Video Section -->
+   <section id="video-section" class="py-16 px-4" style="background: linear-gradient(180deg, #FFF8F0 0%, #F0E6FF 100%);">
+    <div class="max-w-6xl mx-auto">
+     <div class="reveal text-center mb-10">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8E5FF; color: #6C63FF;">👋 Welcome</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #333;">Meet Teacher Aria / Ms. Tin</h2>
+      <p class="max-w-2xl mx-auto text-base leading-relaxed" style="color: #666;">I'm a university instructor and online educator specializing in English and coding. I create engaging learning materials, interactive lessons, and resources to make education meaningful and fun.</p>
+     </div><!-- Video -->
+     <div class="reveal max-w-3xl mx-auto">
+      <div class="video-wrapper shadow-2xl" style="box-shadow: 0 20px 60px rgba(108, 99, 255, 0.25);">
+       <iframe src="https://www.youtube.com/embed/9Ex_lWE1NwI" title="Aria's Learning Hub Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-16 px-4" style="background: #FFFFFF;">
+    <div class="max-w-6xl mx-auto">
+     <div class="reveal text-center mb-12">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFE8F0; color: #FF6B9D;">🌸 About Me</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold" style="color: #333;">Who I Am</h2>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="reveal bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 shadow-md">
+       <div class="text-4xl mb-4">
+        🧑‍🏫
+       </div>
+       <h3 class="font-heading text-xl font-bold mb-3" style="color: #6C63FF;">My Story</h3>
+       <p id="about-desc" class="leading-relaxed" style="color: #555;">I am a dedicated educator based in the Philippines, with experience teaching university students and creating customized online lessons for learners worldwide. I believe in making every lesson count and every student feel empowered.</p>
+      </div>
+      <div class="reveal bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl p-8 shadow-md">
+       <div class="text-4xl mb-4">
+        🎯
+       </div>
+       <h3 class="font-heading text-xl font-bold mb-3" style="color: #00C9A7;">My Mission</h3>
+       <p class="leading-relaxed" style="color: #555;">To make education interactive, inspiring, and accessible for everyone through innovative teaching methods and engaging digital content. Every child and adult deserves quality education!</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Expertise Section -->
+   <section id="expertise" class="py-16 px-4" style="background: linear-gradient(135deg, #F5F0FF 0%, #FFF0F5 50%, #F0FFF4 100%);">
+    <div class="max-w-6xl mx-auto">
+     <div class="reveal text-center mb-12">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E0F8F0; color: #00C9A7;">🏆 Expertise</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold" style="color: #333;">What I Do Best</h2>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal service-card bg-white rounded-2xl p-6 text-center shadow-md cursor-default">
+       <div class="text-5xl mb-4">
+        🎓
+       </div>
+       <h3 class="font-heading font-bold text-lg mb-2" style="color: #6C63FF;">University Instructor</h3>
+       <p class="text-sm" style="color: #777;">Project Management &amp; Data Science</p>
+      </div>
+      <div class="reveal service-card bg-white rounded-2xl p-6 text-center shadow-md cursor-default">
+       <div class="text-5xl mb-4">
+        🌍
+       </div>
+       <h3 class="font-heading font-bold text-lg mb-2" style="color: #FF6B9D;">Online English Teaching</h3>
+       <p class="text-sm" style="color: #777;">Beginner to Advanced Levels</p>
+      </div>
+      <div class="reveal service-card bg-white rounded-2xl p-6 text-center shadow-md cursor-default">
+       <div class="text-5xl mb-4">
+        💻
+       </div>
+       <h3 class="font-heading font-bold text-lg mb-2" style="color: #00C9A7;">Coding for Kids</h3>
+       <p class="text-sm" style="color: #777;">Making programming fun &amp; accessible</p>
+      </div>
+      <div class="reveal service-card bg-white rounded-2xl p-6 text-center shadow-md cursor-default">
+       <div class="text-5xl mb-4">
+        🌐
+       </div>
+       <h3 class="font-heading font-bold text-lg mb-2" style="color: #FFB347;">Interactive Webpages</h3>
+       <p class="text-sm" style="color: #777;">Custom learning experiences</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Free Resources Section -->
+   <section id="resources" class="py-16 px-4" style="background: #FFFFFF;">
+    <div class="max-w-6xl mx-auto">
+     <div class="reveal text-center mb-4">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFF3E0; color: #FFB347;">🎁 Free Resources</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-2" style="color: #333;">Free Learning Materials</h2>
+      <p class="text-base" style="color: #888;">I believe education should be accessible to everyone!</p>
+     </div>
+     <div class="grid sm:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
+      <div class="reveal service-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md">
+       <div class="flex items-start gap-3">
+        <span class="text-3xl">📝</span>
+        <div>
+         <h3 class="font-heading font-bold text-lg mb-1" style="color: #6C63FF;">English Grammar Essentials</h3>
+         <p class="text-sm" style="color: #666;">Complete guide covering basic to advanced grammar rules with examples and exercises.</p>
+        </div>
+       </div>
+      </div>
+      <div class="reveal service-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-md">
+       <div class="flex items-start gap-3">
+        <span class="text-3xl">💻</span>
+        <div>
+         <h3 class="font-heading font-bold text-lg mb-1" style="color: #00C9A7;">Coding for Beginners</h3>
+         <p class="text-sm" style="color: #666;">Step-by-step introduction to programming concepts with fun, interactive examples.</p>
+        </div>
+       </div>
+      </div>
+      <div class="reveal service-card bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 shadow-md">
+       <div class="flex items-start gap-3">
+        <span class="text-3xl">📊</span>
+        <div>
+         <h3 class="font-heading font-bold text-lg mb-1" style="color: #FFB347;">Project Management Basics</h3>
+         <p class="text-sm" style="color: #666;">Essential principles and tools for students and professionals.</p>
+        </div>
+       </div>
+      </div>
+      <div class="reveal service-card bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 shadow-md">
+       <div class="flex items-start gap-3">
+        <span class="text-3xl">🎯</span>
+        <div>
+         <h3 class="font-heading font-bold text-lg mb-1" style="color: #FF6B9D;">Study Tips &amp; Techniques</h3>
+         <p class="text-sm" style="color: #666;">Proven methods to improve learning efficiency and academic performance.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="reveal text-center">
+      <p class="text-sm mb-4" style="color: #999;">📚 More Learning Materials Coming Soon! Check back regularly for updates.</p><a href="mailto:mrsmkdbasa@gmail.com?subject=Request%20for%20Free%20Learning%20Materials&amp;body=Hi%20Kristina!%20I%20would%20like%20to%20request%20your%20free%20learning%20materials.%20Thank%20you!" class="inline-block px-8 py-3 rounded-full font-bold text-white text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105" style="background: linear-gradient(135deg, #FF6B9D, #C44FE2);"> 📧 Get Free Materials Now! </a>
+     </div>
+    </div>
+   </section><!-- Services Section -->
+   <section id="services" class="py-16 px-4" style="background: linear-gradient(180deg, #F5F0FF 0%, #FFF8F0 100%);">
+    <div class="max-w-6xl mx-auto">
+     <div class="reveal text-center mb-12">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8E5FF; color: #6C63FF;">💼 Services</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold" style="color: #333;">My Services</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal service-card bg-white rounded-3xl p-8 text-center shadow-lg border-t-4" style="border-color: #6C63FF;">
+       <div class="text-5xl mb-4">
+        🗣️
+       </div>
+       <h3 class="font-heading font-bold text-xl mb-3" style="color: #6C63FF;">Online English Lessons</h3>
+       <p class="text-sm leading-relaxed" style="color: #666;">Comprehensive English instruction from beginner to advanced levels for students of all ages.</p>
+      </div>
+      <div class="reveal service-card bg-white rounded-3xl p-8 text-center shadow-lg border-t-4" style="border-color: #FF6B9D;">
+       <div class="text-5xl mb-4">
+        💻
+       </div>
+       <h3 class="font-heading font-bold text-xl mb-3" style="color: #FF6B9D;">Coding for Kids &amp; Teens</h3>
+       <p class="text-sm leading-relaxed" style="color: #666;">Fun and interactive programming lessons through games, projects, and creative activities that build problem-solving skills.</p>
+      </div>
+      <div class="reveal service-card bg-white rounded-3xl p-8 text-center shadow-lg border-t-4" style="border-color: #00C9A7;">
+       <div class="text-5xl mb-4">
+        🎨
+       </div>
+       <h3 class="font-heading font-bold text-xl mb-3" style="color: #00C9A7;">Digital Designing</h3>
+       <p class="text-sm leading-relaxed" style="color: #666;">Professional design for banners, ebooks, interactive webpages, educational materials, and custom digital content.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Pricing Section -->
+   <section id="pricing" class="py-16 px-4" style="background: #FFFFFF;">
+    <div class="max-w-6xl mx-auto">
+     <div class="reveal text-center mb-6">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFF3CD; color: #D4A017;">💰 Plans &amp; Pricing</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4" style="color: #333;">Choose Your Package</h2>
+     </div><!-- Currency Toggle -->
+     <div class="reveal flex justify-center mb-10">
+      <div class="inline-flex bg-gray-100 rounded-full p-1">
+       <button id="tab-intl" class="tab-btn active px-6 py-2 rounded-full font-bold text-sm" onclick="switchPricing('intl')">🌍 International (USD)</button> <button id="tab-ph" class="tab-btn px-6 py-2 rounded-full font-bold text-sm" style="color: #666;" onclick="switchPricing('ph')">🇵🇭 Philippines (PHP)</button>
+      </div>
+     </div><!-- International Pricing -->
+     <div id="pricing-intl" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+      <div class="reveal price-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        🌱
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #00C9A7;">Starter</h3>
+       <p class="text-xs mb-3" style="color: #888;">Try &amp; Experience</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $28
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$30</s> Save $2</p>
+       <p class="text-sm font-bold mb-3" style="color: #00C9A7;">5 Lessons · $5.60/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #00C9A7;">Get Started</a>
+      </div>
+      <div class="reveal price-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        📘
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #6C63FF;">Bronze</h3>
+       <p class="text-xs mb-3" style="color: #888;">Build Consistency</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $54
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$60</s> Save $6</p>
+       <p class="text-sm font-bold mb-3" style="color: #6C63FF;">10 Lessons · $5.40/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #6C63FF;">Get Started</a>
+      </div>
+      <div class="reveal price-card bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        📗
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #10B981;">Silver</h3>
+       <p class="text-xs mb-3" style="color: #888;">Stronger Progress</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $78
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$90</s> Save $12</p>
+       <p class="text-sm font-bold mb-3" style="color: #10B981;">15 Lessons · $5.20/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #10B981;">Get Started</a>
+      </div>
+      <div class="reveal price-card popular bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 shadow-lg text-center relative">
+       <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #FFB347, #FF6B9D);">
+        ⭐ Most Popular
+       </div>
+       <div class="text-3xl mb-2 mt-2">
+        🥇
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #D4A017;">Gold</h3>
+       <p class="text-xs mb-3" style="color: #888;">Best Value</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $100
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$120</s> Save $20</p>
+       <p class="text-sm font-bold mb-3" style="color: #D4A017;">20 Lessons · $5.00/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: linear-gradient(135deg, #FFB347, #FF6B9D);">Get Started</a>
+      </div>
+      <div class="reveal price-card bg-gradient-to-br from-purple-50 to-fuchsia-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        💎
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #C44FE2;">Platinum</h3>
+       <p class="text-xs mb-3" style="color: #888;">Fast Improvement</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $144
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$180</s> Save $36</p>
+       <p class="text-sm font-bold mb-3" style="color: #C44FE2;">30 Lessons · $4.80/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: linear-gradient(135deg, #C44FE2, #6C63FF);">Get Started</a>
+      </div>
+     </div><!-- Philippines Pricing -->
+     <div id="pricing-ph" class="hidden grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+      <div class="price-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        🌱
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #00C9A7;">Starter</h3>
+       <p class="text-xs mb-3" style="color: #888;">Trial or short-term help</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        ₱1,400
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>₱1,500</s> Save ₱100</p>
+       <p class="text-sm font-bold mb-3" style="color: #00C9A7;">5 Lessons · ₱280/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #00C9A7;">Get Started</a>
+      </div>
+      <div class="price-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        📘
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #6C63FF;">Bronze</h3>
+       <p class="text-xs mb-3" style="color: #888;">Build consistency</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        ₱2,700
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>₱3,000</s> Save ₱300</p>
+       <p class="text-sm font-bold mb-3" style="color: #6C63FF;">10 Lessons · ₱270/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #6C63FF;">Get Started</a>
+      </div>
+      <div class="price-card bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        📗
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #10B981;">Silver</h3>
+       <p class="text-xs mb-3" style="color: #888;">Stronger progress</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        ₱3,900
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>₱4,500</s> Save ₱600</p>
+       <p class="text-sm font-bold mb-3" style="color: #10B981;">15 Lessons · ₱260/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #10B981;">Get Started</a>
+      </div>
+      <div class="price-card popular bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 shadow-lg text-center relative">
+       <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #FFB347, #FF6B9D);">
+        ⭐ Most Popular
+       </div>
+       <div class="text-3xl mb-2 mt-2">
+        🥇
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #D4A017;">Gold</h3>
+       <p class="text-xs mb-3" style="color: #888;">Best value</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        ₱5,000
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>₱6,000</s> Save ₱1,000</p>
+       <p class="text-sm font-bold mb-3" style="color: #D4A017;">20 Lessons · ₱250/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: linear-gradient(135deg, #FFB347, #FF6B9D);">Get Started</a>
+      </div>
+      <div class="price-card bg-gradient-to-br from-purple-50 to-fuchsia-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        💎
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #C44FE2;">Platinum</h3>
+       <p class="text-xs mb-3" style="color: #888;">Fast improvement</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        ₱7,200
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>₱9,000</s> Save ₱1,800</p>
+       <p class="text-sm font-bold mb-3" style="color: #C44FE2;">30 Lessons · ₱240/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: linear-gradient(135deg, #C44FE2, #6C63FF);">Get Started</a>
+      </div>
+     </div><!-- Perks -->
+     <div class="reveal mt-10 max-w-2xl mx-auto bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 shadow-md">
+      <h3 class="font-heading font-bold text-lg text-center mb-4" style="color: #6C63FF;">🎁 Included Perks</h3>
+      <div class="grid grid-cols-2 gap-3 text-sm" style="color: #555;">
+       <div class="flex items-center gap-2">
+        ✅ Flexible scheduling
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ Free learning materials
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ Progress tracking
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ Personalized lessons
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ Homework support
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ Certificate of completion
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Test Prep Packages Section -->
+   <section id="test-prep" class="py-16 px-4" style="background: linear-gradient(135deg, #F0E6FF 0%, #FFF0F5 100%);">
+    <div class="max-w-6xl mx-auto">
+     <div class="reveal text-center mb-6">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #E8D5FF; color: #6C63FF;">📚 Test Prep</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-2" style="color: #333;">Exam Success Programs</h2>
+      <p id="test-prep-intro" class="text-lg font-semibold mb-4" style="color: #6C63FF;">EIKEN • TOEIC • IELTS Coaching</p>
+      <p style="color: #888;">Structured training to help you reach your target score with proven strategies and personalized support.</p>
+     </div><!-- Test Prep Pricing -->
+     <div id="testprep-pricing" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-10">
+      <div class="reveal price-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        🌱
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #00C9A7;">Starter</h3>
+       <p class="text-xs mb-3" style="color: #888;">Assessment &amp; Short-term Prep</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $48
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$50</s> Save $2</p>
+       <p class="text-sm font-bold mb-3" style="color: #00C9A7;">5 Lessons · $9.60/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #00C9A7;">Enroll Now</a>
+      </div>
+      <div class="reveal price-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        📘
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #6C63FF;">Bronze</h3>
+       <p class="text-xs mb-3" style="color: #888;">Foundation Building</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $95
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$100</s> Save $5</p>
+       <p class="text-sm font-bold mb-3" style="color: #6C63FF;">10 Lessons · $9.50/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #6C63FF;">Enroll Now</a>
+      </div>
+      <div class="reveal price-card bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        📗
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #10B981;">Silver</h3>
+       <p class="text-xs mb-3" style="color: #888;">Skill Development</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $138
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$150</s> Save $12</p>
+       <p class="text-sm font-bold mb-3" style="color: #10B981;">15 Lessons · $9.20/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: #10B981;">Enroll Now</a>
+      </div>
+      <div class="reveal price-card popular bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 shadow-lg text-center relative">
+       <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold text-white" style="background: linear-gradient(135deg, #FFB347, #FF6B9D);">
+        ⭐ Most Popular
+       </div>
+       <div class="text-3xl mb-2 mt-2">
+        🥇
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #D4A017;">Gold</h3>
+       <p class="text-xs mb-3" style="color: #888;">Target Score Training</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $180
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$200</s> Save $20</p>
+       <p class="text-sm font-bold mb-3" style="color: #D4A017;">20 Lessons · $9.00/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: linear-gradient(135deg, #FFB347, #FF6B9D);">Enroll Now</a>
+      </div>
+      <div class="reveal price-card bg-gradient-to-br from-purple-50 to-fuchsia-50 rounded-2xl p-6 shadow-md text-center">
+       <div class="text-3xl mb-2">
+        💎
+       </div>
+       <h3 class="font-heading font-bold text-lg" style="color: #C44FE2;">Platinum</h3>
+       <p class="text-xs mb-3" style="color: #888;">Intensive Review / Exam Ready</p>
+       <div class="font-heading font-extrabold text-3xl mb-1" style="color: #333;">
+        $255
+       </div>
+       <p class="text-xs mb-1" style="color: #aaa;"><s>$300</s> Save $45</p>
+       <p class="text-sm font-bold mb-3" style="color: #C44FE2;">30 Lessons · $8.50/ea</p><a href="#contact" class="inline-block w-full py-2 rounded-full font-bold text-sm text-white" style="background: linear-gradient(135deg, #C44FE2, #6C63FF);">Enroll Now</a>
+      </div>
+     </div><!-- Premium Inclusions -->
+     <div class="reveal bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 shadow-md max-w-4xl mx-auto">
+      <h3 class="font-heading font-bold text-lg text-center mb-6" style="color: #6C63FF;">✨ Premium Test Prep Inclusions</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm" style="color: #555;">
+       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+        <div>
+         <p class="font-semibold" style="color: #6C63FF;">Mock Exams</p>
+         <p class="text-xs" style="color: #888;">IELTS / TOEIC / EIKEN style practice tests</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+        <div>
+         <p class="font-semibold" style="color: #FF6B9D;">Speaking Practice</p>
+         <p class="text-xs" style="color: #888;">Live conversation with expert corrections</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+        <div>
+         <p class="font-semibold" style="color: #00C9A7;">Writing Feedback</p>
+         <p class="text-xs" style="color: #888;">Detailed band score style assessments</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+        <div>
+         <p class="font-semibold" style="color: #D4A017;">Exam Vocabulary</p>
+         <p class="text-xs" style="color: #888;">Targeted word lists for your test</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+        <div>
+         <p class="font-semibold" style="color: #6C63FF;">Test Strategies</p>
+         <p class="text-xs" style="color: #888;">Time management &amp; proven techniques</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3"><span class="text-lg">✓</span>
+        <div>
+         <p class="font-semibold" style="color: #FF6B9D;">Score Planning</p>
+         <p class="text-xs" style="color: #888;">Personalized roadmap to your target score</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- CTA Section -->
+   <section class="py-16 px-4 hero-gradient relative overflow-hidden">
+    <div class="absolute top-8 left-12 text-4xl float-2 opacity-70">
+     🌟
+    </div>
+    <div class="absolute bottom-8 right-12 text-4xl float-1 opacity-70">
+     🎓
+    </div>
+    <div class="reveal max-w-3xl mx-auto text-center relative z-10">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your Learning Journey?</h2>
+     <p class="text-white/80 text-lg mb-8">Join hundreds of students who are already learning smarter!</p><a href="#contact" class="inline-block px-10 py-4 rounded-full font-bold text-lg bg-white shadow-lg hover:shadow-xl transition-all hover:scale-105" style="color: #6C63FF;"> Let's Get Started! 🚀 </a>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-16 px-4" style="background: #FFF8F0;">
+    <div class="max-w-4xl mx-auto">
+     <div class="reveal text-center mb-10">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-3" style="background: #FFE8F0; color: #FF6B9D;">💌 Contact</span>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-2" style="color: #333;">Get In Touch</h2>
+      <p style="color: #888;">I'd love to hear from you! Reach out anytime.</p>
+     </div>
+     <div class="reveal grid md:grid-cols-3 gap-6 mb-8">
+      <a href="mailto:mrsmkdbasa@gmail.com" class="service-card bg-white rounded-2xl p-6 text-center shadow-md block">
+       <div class="text-3xl mb-3">
+        📧
+       </div><h3 class="font-heading font-bold mb-1" style="color: #6C63FF;">Email</h3><p class="text-sm" style="color: #888;">mrsmkdbasa@gmail.com</p></a> <a href="https://www.facebook.com/blessedteacheraria" target="_blank" rel="noopener noreferrer" class="service-card bg-white rounded-2xl p-6 text-center shadow-md block">
+       <div class="text-3xl mb-3">
+        📱
+       </div><h3 class="font-heading font-bold mb-1" style="color: #FF6B9D;">Facebook</h3><p class="text-sm" style="color: #888;">@blessedteacheraria</p></a>
+      <div class="service-card bg-white rounded-2xl p-6 text-center shadow-md">
+       <div class="text-3xl mb-3">
+        💬
+       </div>
+       <h3 class="font-heading font-bold mb-1" style="color: #00C9A7;">Line ID</h3>
+       <p class="text-sm" style="color: #888;">mrsmkdbasa</p>
+      </div><a href="https://github.com/ariasensei" target="_blank" rel="noopener noreferrer" class="service-card bg-white rounded-2xl p-6 text-center shadow-md block">
+       <div class="text-3xl mb-3">
+        💻
+       </div><h3 class="font-heading font-bold mb-1" style="color: #FFB347;">GitHub</h3><p class="text-sm" style="color: #888;">ariasensei</p></a> <a href="https://www.youtube.com/@AriasLearningHub" target="_blank" rel="noopener noreferrer" class="service-card bg-white rounded-2xl p-6 text-center shadow-md block">
+       <div class="text-3xl mb-3">
+        🎬
+       </div><h3 class="font-heading font-bold mb-1" style="color: #FF6B9D;">YouTube</h3><p class="text-sm" style="color: #888;">Aria's Learning Hub</p></a>
+      <div class="service-card bg-white rounded-2xl p-6 text-center shadow-md">
+       <div class="text-3xl mb-3">
+        📍
+       </div>
+       <h3 class="font-heading font-bold mb-1" style="color: #00C9A7;">Location</h3>
+       <p class="text-sm" style="color: #888;">Philippines 🇵🇭</p>
+      </div>
+     </div><!-- Quick message form (mailto) -->
+     <div class="reveal bg-white rounded-3xl p-8 shadow-lg max-w-xl mx-auto">
+      <h3 class="font-heading font-bold text-xl text-center mb-6" style="color: #333;">Send Me a Message</h3>
+      <form id="contact-form" class="flex flex-col gap-4">
+       <div>
+        <label for="c-name" class="block text-sm font-semibold mb-1" style="color: #555;">Your Name</label> <input id="c-name" type="text" placeholder="Enter your name" class="w-full px-4 py-3 rounded-xl border-2 text-sm focus:outline-none focus:border-purple-400 transition" style="border-color: #E0E0E0;">
+       </div>
+       <div>
+        <label for="c-email" class="block text-sm font-semibold mb-1" style="color: #555;">Your Email</label> <input id="c-email" type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-xl border-2 text-sm focus:outline-none focus:border-purple-400 transition" style="border-color: #E0E0E0;">
+       </div>
+       <div>
+        <label for="c-msg" class="block text-sm font-semibold mb-1" style="color: #555;">Message</label> <textarea id="c-msg" rows="4" placeholder="How can I help you?" class="w-full px-4 py-3 rounded-xl border-2 text-sm focus:outline-none focus:border-purple-400 transition resize-none" style="border-color: #E0E0E0;"></textarea>
+       </div><button type="submit" class="w-full py-3 rounded-full font-bold text-white text-lg shadow-md hover:shadow-lg transition-all hover:scale-[1.02]" style="background: linear-gradient(135deg, #FF6B9D, #C44FE2);"> Send Message 💌 </button>
+       <div id="form-success" class="hidden text-center py-3 rounded-xl font-semibold text-sm" style="background: #E0F8F0; color: #00C9A7;">
+        ✅ Opening your email app now!
+       </div>
+      </form>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-8 px-4 text-center" style="background: #333; color: #aaa;">
+    <div class="max-w-4xl mx-auto">
+     <span class="text-2xl">🌈</span>
+     <p class="font-heading font-bold text-lg text-white mt-2">Aria's Learning Hub</p>
+     <p class="text-sm mt-1">by Maria Kristina Basa (MKDB)</p>
+     <p class="text-xs mt-4" style="color: #666;">Teaching since 2014.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+// Mobile menu
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+let menuOpen = false;
+mobileToggle.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  if (menuOpen) {
+    mobileMenu.style.maxHeight = '300px';
+    mobileMenu.style.opacity = '1';
+  } else {
+    mobileMenu.style.maxHeight = '0';
+    mobileMenu.style.opacity = '0';
+  }
+});
+function closeMobile() {
+  menuOpen = false;
+  mobileMenu.style.maxHeight = '0';
+  mobileMenu.style.opacity = '0';
+}
+
+// Pricing tabs
+function switchPricing(tab) {
+  const intl = document.getElementById('pricing-intl');
+  const ph = document.getElementById('pricing-ph');
+  const tabIntl = document.getElementById('tab-intl');
+  const tabPh = document.getElementById('tab-ph');
+  if (tab === 'intl') {
+    intl.classList.remove('hidden');
+    ph.classList.add('hidden');
+    tabIntl.classList.add('active');
+    tabPh.classList.remove('active');
+  } else {
+    intl.classList.add('hidden');
+    ph.classList.remove('hidden');
+    tabPh.classList.add('active');
+    tabIntl.classList.remove('active');
+  }
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Contact form -> mailto
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('c-name').value.trim();
+  const email = document.getElementById('c-email').value.trim();
+  const msg = document.getElementById('c-msg').value.trim();
+  const subject = encodeURIComponent('Inquiry from ' + (name || 'Website Visitor'));
+  const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
+  window.open('mailto:mrsmkdbasa@gmail.com?subject=' + subject + '&body=' + body, '_blank');
+  document.getElementById('form-success').classList.remove('hidden');
+  this.reset();
+  setTimeout(() => document.getElementById('form-success').classList.add('hidden'), 4000);
+});
+
+// Lucide icons
+lucide.createIcons();
+
+// Element SDK
+const defaultConfig = {
+  site_title: "Aria's Learning Hub",
+  hero_subtitle: "Educator & Digital Creator",
+  about_text: "I am a dedicated educator based in the Philippines, with experience teaching university students and creating customized online lessons for learners worldwide. I believe in making every lesson count and every student feel empowered.",
+  cta_button_text: "Start Learning Today 🚀",
+  test_prep_intro: "EIKEN • TOEIC • IELTS Coaching",
+  background_color: "#FFF8F0",
+  surface_color: "#FFFFFF",
+  text_color: "#333333",
+  primary_action_color: "#6C63FF",
+  secondary_action_color: "#FF6B9D",
+  font_family: "Baloo 2",
+  font_size: 16
+};
+
+function applyConfig(config) {
+  const c = { ...defaultConfig, ...config };
+
+  // Text content
+  document.getElementById('nav-title').textContent = c.site_title;
+  document.getElementById('hero-title').textContent = c.site_title;
+  document.getElementById('hero-subtitle').textContent = c.hero_subtitle;
+  document.getElementById('about-desc').textContent = c.about_text;
+  document.getElementById('hero-cta').textContent = c.cta_button_text;
+  document.getElementById('test-prep-intro').textContent = c.test_prep_intro;
+
+  // Background
+  document.getElementById('app-root').style.backgroundColor = c.background_color;
+
+  // Font
+  const fontStack = c.font_family + ', Baloo 2, cursive';
+  document.querySelectorAll('.font-heading').forEach(el => el.style.fontFamily = fontStack);
+
+  const bodyStack = c.font_family + ', Nunito, sans-serif';
+  document.body.style.fontFamily = bodyStack;
+
+  // Font size
+  const base = c.font_size || 16;
+  document.body.style.fontSize = base + 'px';
+}
+
+window.elementSdk.init({
+  defaultConfig,
+  onConfigChange: async (config) => applyConfig(config),
+  mapToCapabilities: (config) => {
+    const c = { ...defaultConfig, ...config };
+    return {
+      recolorables: [
+        { get: () => c.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+        { get: () => c.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+        { get: () => c.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+        { get: () => c.primary_action_color, set: (v) => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); } },
+        { get: () => c.secondary_action_color, set: (v) => { config.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } }
+      ],
+      borderables: [],
+      fontEditable: {
+        get: () => c.font_family,
+        set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+      },
+      fontSizeable: {
+        get: () => c.font_size,
+        set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+      }
+    };
+  },
+  mapToEditPanelValues: (config) => {
+    const c = { ...defaultConfig, ...config };
+    return new Map([
+      ["site_title", c.site_title],
+      ["hero_subtitle", c.hero_subtitle],
+      ["about_text", c.about_text],
+      ["cta_button_text", c.cta_button_text],
+      ["test_prep_intro", c.test_prep_intro]
+    ]);
+  }
+});
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e966c2f95a3fed9',t:'MTc3NTcwNTMxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
